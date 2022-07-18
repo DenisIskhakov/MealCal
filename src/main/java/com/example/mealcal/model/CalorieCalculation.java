@@ -10,11 +10,9 @@ import javax.persistence.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CalorieCalculation {
+public class CalorieCalculation extends  BaseEntity{
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+
     private Integer weight;
     private Integer height;
     private Integer age;
@@ -22,6 +20,7 @@ public class CalorieCalculation {
     @Embedded
     private ActivityFactor activityFactor;
     private Integer percentageSurplusOrDeficit; // -10 = худеем | +10 = набираем
-
+    @Enumerated(value = EnumType.STRING)
+    private Activity coefficientActivity;
 
 }

@@ -15,12 +15,13 @@ public class CalorieCalculationController {
     private CalorieCalculationRepository calorieCalculationRepository;
 
     @PostMapping("/add")
-    public Integer savePerson(@RequestBody CalorieCalculation calorieCalculation){
+    public Double savePerson(@RequestBody CalorieCalculation calorieCalculation){
 //        Integer a = ((calorieCalculation.getWeight() / (calorieCalculation.getHeight() + calorieCalculation.getAge())))*100;
         //(6.25*рост)+(10*вес)-(5*возраст)
         Double a = (6.25*calorieCalculation.getHeight())+ (10*calorieCalculation.getWeight())-(5*calorieCalculation.getAge());
 
 
-        System.out.println(a);
+//        System.out.println(a);
+        return a;
     }
 }

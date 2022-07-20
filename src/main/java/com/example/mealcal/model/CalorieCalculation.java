@@ -19,7 +19,10 @@ public class CalorieCalculation extends  BaseEntity{
 
     @Embedded
     private ActivityFactor activityFactor;
-    private Integer percentageSurplusOrDeficit; // -10 = худеем | +10 = набираем
+
+    @Enumerated(value = EnumType.STRING)
+    private PercentageSurplusOrDeficit percentageSurplusOrDeficit; // 0.1 0.15 0.2
+    //коэффициент активности
     @Enumerated(value = EnumType.STRING)
     private Activity coefficientActivity;
 
